@@ -82,7 +82,4 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  database: momos_buddies_production
-  username: momos_buddies
-  password: <%= ENV["MOMOS_BUDDIES_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
