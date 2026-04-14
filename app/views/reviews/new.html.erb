@@ -1,0 +1,25 @@
+<div class="max-w-2xl mx-auto px-4 py-8">
+
+  <%# Breadcrumb %>
+  <div class="flex items-center gap-2 text-sm text-gray-400 font-medium mb-8">
+    <%= link_to "Reviews", reviews_path, class: "hover:text-orange-500 transition-colors" %>
+    <span>›</span>
+    <span class="text-gray-600">Write a Review</span>
+  </div>
+
+  <%# Card %>
+  <div id="review_form_card" class="bg-white rounded-[2.5rem] shadow-xl p-8 sm:p-10">
+    <div class="mb-8 text-center">
+      <div class="inline-flex items-center justify-center rounded-full bg-orange-100 px-4 py-1.5 mb-4 text-sm font-semibold text-orange-700 shadow-sm border border-orange-200">
+        <span class="mr-2">✍️</span> Share Your Experience
+      </div>
+      <h1 class="text-3xl font-extrabold text-gray-900">Write a Review</h1>
+      <p class="text-gray-400 mt-2 font-medium">Your feedback helps us serve you better 🥟</p>
+    </div>
+  
+    <div id="review_form">
+      <%= render "form", review: @review %>
+    </div>
+  </div>
+
+</div>

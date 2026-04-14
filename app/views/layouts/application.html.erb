@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MomosBuddies</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+<body class="min-h-screen flex flex-col bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 text-gray-800 font-sans transition-all duration-300">    <nav class="bg-gradient-to-r from-orange-400 to-red-500 fixed inset-x-0 top-0 z-50 border-b border-orange-200/60 bg-gradient-to-r from-orange-100/95 via-orange-50/95 to-red-100/95 shadow-[0_18px_45px_rgba(249,115,22,0.18)] backdrop-blur-xl">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <div class="flex-shrink-0 flex items-center gap-3">
+              <%= link_to root_path, class: "flex items-center gap-2 group" do %>
+              <%= image_tag 'logo.png', class: 'h-16 w-auto object-contain group-hover:scale-105 transition-transform drop-shadow-md' %>
+            <% end %>
+          </div>
+          
+          <div class="hidden md:ml-6 md:flex md:space-x-8 items-center">
+            <%= link_to "Home", root_path, class: "px-1 pt-1 text-sm font-bold text-orange-900 hover:text-red-600 hover:border-b-2 hover:border-red-400 transition-colors" %>
+            <%= link_to "Menu", menu_path, class: "px-1 pt-1 text-sm font-bold text-orange-900 hover:text-red-600 hover:border-b-2 hover:border-red-400 transition-colors" %>
+            <%= link_to "About", about_path, class: "px-1 pt-1 text-sm font-bold text-orange-900 hover:text-red-600 hover:border-b-2 hover:border-red-400 transition-colors" %>
+            <%= link_to "Contact", contact_path, class: "px-1 pt-1 text-sm font-bold text-orange-900 hover:text-red-600 hover:border-b-2 hover:border-red-400 transition-colors" %>
+            <%= link_to "Reviews ⭐", reviews_path, class: "px-1 pt-1 text-sm font-bold text-red-600 hover:text-red-700 hover:border-b-2 hover:border-red-400 transition-colors" %>
+            <a href="https://wa.me/917049652141" target="_blank" class="ml-4 inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-gradient-to-r from-orange-500 to-red-600 text-sm font-bold text-white shadow-lg shadow-orange-500/20 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-orange-500/25 focus:outline-none focus:ring-2 focus:ring-orange-300 transition-all">Order Now</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="relative flex-grow pt-28 px-4 pb-20 w-full max-w-7xl mx-auto animate-fade-in-up">
+      <%= yield %>
+    </main>
+
+    <footer class="mt-auto border-t border-orange-100 bg-slate-950 text-white">
+      <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="md:flex md:items-center md:justify-between flex-col md:flex-row gap-6">
+          <div class="flex flex-col items-center md:items-start space-y-2">
+            <h2 class="text-2xl font-black bg-gradient-to-r from-orange-300 to-red-400 bg-clip-text text-transparent">Momos Buddies</h2>
+            <p class="text-sm text-orange-200 font-medium tracking-wider">Har bite mein dosti ka taste</p>
+          </div>
+          <div class="text-center md:text-right">
+            <p class="text-sm text-slate-400">
+              &copy; <%= Time.current.year %> Momos Buddies.<br class="md:hidden" /> All rights reserved.
+            </p>
+            <div class="mt-4 flex justify-center md:justify-end gap-4 text-sm">
+              <a href="tel:+917049652141" class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-slate-200 hover:border-orange-300 hover:text-orange-200 transition-colors">Call</a>
+              <a href="https://wa.me/917049652141" target="_blank" class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-slate-200 hover:border-orange-300 hover:text-orange-200 transition-colors">WhatsApp</a>
+              <a href="<%= contact_path %>" class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-slate-200 hover:border-orange-300 hover:text-orange-200 transition-colors">Visit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

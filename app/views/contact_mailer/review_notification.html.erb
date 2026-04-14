@@ -1,0 +1,26 @@
+<div style="font-family: Arial, sans-serif; color: #1f2937; line-height: 1.6;">
+  <h2 style="color: #dc2626; margin-bottom: 16px;">New Review Submitted</h2>
+
+  <p style="margin: 0 0 12px;">
+    A new review has been submitted on the Momos Buddies website.
+  </p>
+
+  <table style="width: 100%; border-collapse: collapse; margin-top: 16px;">
+    <tr>
+      <td style="padding: 10px; border: 1px solid #e5e7eb; font-weight: bold; width: 160px;">Name</td>
+      <td style="padding: 10px; border: 1px solid #e5e7eb;"><%= @review.name %></td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; border: 1px solid #e5e7eb; font-weight: bold;">Email</td>
+      <td style="padding: 10px; border: 1px solid #e5e7eb;"><%= @review.email %></td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; border: 1px solid #e5e7eb; font-weight: bold;">Rating</td>
+      <td style="padding: 10px; border: 1px solid #e5e7eb;"><%= @review.rating %>/5</td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; border: 1px solid #e5e7eb; font-weight: bold;">Description</td>
+      <td style="padding: 10px; border: 1px solid #e5e7eb;"><%= simple_format(@review.body) %></td>
+    </tr>
+  </table>
+</div>

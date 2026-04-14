@@ -1,0 +1,23 @@
+<div class="max-w-2xl mx-auto px-4 py-8">
+
+  <%# Breadcrumb %>
+  <div class="flex items-center gap-2 text-sm text-gray-400 font-medium mb-8">
+    <%= link_to "Reviews", reviews_path, class: "hover:text-orange-500 transition-colors" %>
+    <span>›</span>
+    <span class="text-gray-600">Edit Review</span>
+  </div>
+
+  <%# Card %>
+  <div class="bg-white rounded-[2.5rem] shadow-xl p-8 sm:p-10">
+    <div class="mb-8 text-center">
+      <div class="inline-flex items-center justify-center rounded-full bg-yellow-100 px-4 py-1.5 mb-4 text-sm font-semibold text-yellow-700 shadow-sm border border-yellow-200">
+        <span class="mr-2">✏️</span> Edit Review
+      </div>
+      <h1 class="text-3xl font-extrabold text-gray-900">Update Your Review</h1>
+      <p class="text-gray-400 mt-2 font-medium">Make changes and resubmit below</p>
+    </div>
+
+    <%= render 'form', review: @review %>
+  </div>
+
+</div>
