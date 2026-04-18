@@ -1,4 +1,7 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
+  mount Sidekiq::Web => '/sidekiq'
   root 'pages#home'
   get 'menu', to: 'pages#menu'
   get 'about', to: 'pages#about'
