@@ -16,8 +16,8 @@ class ReviewsController < ApplicationController
     @average_rating = @reviews.average(:rating)&.round(1) || 0
 
     if @review.save
-      ContactMailer.thank_you_review(name: @review.name, email: @review.email).deliver_later
-      ContactMailer.review_notification(@review).deliver_later
+      ContactMailer.thank_you_review(name: @review.name, email: @review.email).deliver_now
+      ContactMailer.review_notification(@review).deliver_now
 
       respond_to do |format|
         format.turbo_stream

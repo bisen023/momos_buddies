@@ -3,7 +3,7 @@ class ContactMailer < ApplicationMailer
 
   MOMOS_BUDDIES_EMAIL = "momosbuddies62@gmail.com".freeze
 
-  # Call with ContactMailer.thank_you_review(name:, email:).deliver_later
+  # Call with ContactMailer.thank_you_review(name:, email:).deliver_now
   def thank_you_review(name:, email:)
     @name  = name
     @email = email
